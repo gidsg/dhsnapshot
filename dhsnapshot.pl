@@ -69,7 +69,7 @@ sub sync {
     $conf{'nice_path'},'-19',
     $conf{'rsync_path'},
     '-e', "ssh -oIdentityFile=$conf{'private_key'}",
-    '-az', '--delete',
+    '-az', '-P', '--delete',
     @exclude_filter_settings,
     "--link-dest='../${interval}.1'",
     $conf{'backup_source'},
